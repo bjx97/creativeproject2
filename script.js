@@ -1,13 +1,13 @@
 const select = document.querySelectorAll('select');
 const input = document.querySelectorAll('input');
 const url = "https://api.exchangeratesapi.io/latest";
-let boxNames = '';
 
 async function exchange() {
     const response = await fetch(url);
     const data = await response.json();
     const countryNames = Object.keys(data.rates);
     const rates = data.rates;
+    let boxNames = '';
 
     countryNames.map(item =>{
         return boxNames += `<option value=${item}>${item}</option>`;
